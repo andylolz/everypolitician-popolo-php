@@ -1,0 +1,13 @@
+{
+    "name": "mysociety/everypolitician-popolo-php",
+    "description": "Parse Popolo JSON data and navigate it with PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Lulham",
+            "email": "a.lulham@gmail.com"
+        }
+    ],
+    "require": {}
+}
