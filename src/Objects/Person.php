@@ -2,6 +2,8 @@
 
 namespace mySociety\EveryPoliticianPopolo\Objects;
 
+use \mySociety\EveryPoliticianPopolo\Parse;
+
 class Person extends PopoloObject
 {
     use \mySociety\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
@@ -120,20 +122,11 @@ class Person extends PopoloObject
         return $this->identifierValue('wikidata');
     }
 
-    private function extractTwitterUsername($usernameOrUrl)
-    {
-        $splitUrl = parse_url($usernameOrUrl);
-        if (array_key_exists('host', $splitUrl) && $splitUrl['host'] == 'twitter.com') {
-            return preg_replace('!^/([^/]+).*!', '\1', $splitUrl['path']);
-        }
-        return ltrim(trim($usernameOrUrl), '@');
-    }
-
     protected function getTwitter()
     {
         $usernameOrUrl = $this->contactDetailValue('twitter') ?: $this->linkValue('twitter');
         if ($usernameOrUrl) {
-            return $this->extractTwitterUsername($usernameOrUrl);
+            return Parse::extractTwitterUsername($usernameOrUrl);
         }
         return null;
     }
@@ -145,7 +138,7 @@ class Person extends PopoloObject
         $allTwitters = [];
         $rawTwitters = $this->contactDetailValues('twitter') + $this->linkValues('twitter');
         foreach ($rawTwitters as $rawTwitter) {
-            $twitter = $this->extractTwitterUsername($rawTwitter);
+            $twitter = Parse::extractTwitterUsername($rawTwitter);
             if (!in_array($twitter, $allTwitters)) {
                 $allTwitters[] = $twitter;
             }
