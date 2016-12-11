@@ -99,23 +99,27 @@ NOW;
         $this->assertEquals('Harry Truman', $matches[0]->name);
     }
 
+    /**
+     * @expectedException mySociety\EveryPoliticianPopolo\Exceptions\ObjectDoesNotExistException
+     */
     public function testGetOfPeopleNoneMatching()
     {
         $filename = $this->exampleFile('{}');
         $popolo = Popolo::fromFilename($filename);
         unlink($filename);
 
-        $this->expectException(Exceptions\ObjectDoesNotExistException::class);
         $popolo->persons->get(['name' => 'Harry Truman']);
     }
 
+    /**
+     * @expectedException mySociety\EveryPoliticianPopolo\Exceptions\MultipleObjectsReturnedException
+     */
     public function testGetOfPeopleMultipleMatches()
     {
         $filename = $this->exampleFile(self::EXAMPLE_TWO_PEOPLE);
         $popolo = Popolo::fromFilename($filename);
         unlink($filename);
 
-        $this->expectException(Exceptions\MultipleObjectsReturnedException::class);
         $popolo->persons->get(['nationalIdentity' => 'American']);
     }
 
@@ -629,6 +633,10 @@ NOW;
         $this->assertEquals('Bob', $person->nameAt(new \DateTime('2000-01-01')));
     }
 
+    /**
+     * @expectedException Exception
+     * @expectedExceptionMessage Multiple names for <Person: Bob> found at date 1996-01-01
+     */
     public function testPersonMultipleNamesAtOneDate()
     {
         $exampleData = <<<'NOW'
@@ -657,8 +665,6 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Multiple names for <Person: Bob> found at date 1996-01-01');
         $person->nameAt(new \DateTime('1996-01-01'));
     }
 

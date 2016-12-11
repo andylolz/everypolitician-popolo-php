@@ -17,13 +17,13 @@ class LoadTest extends \PHPUnit_Framework_TestCase
         Popolo::fromFilename($filename);
     }
 
+    /**
+     * @expectedException        PHPUnit_Framework_Error_Warning
+     * @expectedExceptionMessage file_get_contents(non-existent-file.json): failed to open stream
+     */
     public function testFailsToCreateFromANonexistentFilename()
     {
-        $filename = 'non-existent-file.json';
-        $this->expectException(\PHPUnit_Framework_Error_Warning::class);
-        $msg = "file_get_contents($filename): failed to open stream: No such file or directory";
-        $this->expectExceptionMessage($msg);
-        Popolo::fromFilename($filename);
+        Popolo::fromFilename('non-existent-file.json');
     }
 
     public function testCreateFromUrl()
