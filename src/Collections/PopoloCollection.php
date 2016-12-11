@@ -4,7 +4,7 @@ namespace mySociety\EveryPoliticianPopolo\Collections;
 
 use \mySociety\EveryPoliticianPopolo\Exceptions;
 
-class PopoloCollection implements \Countable, \ArrayAccess
+class PopoloCollection implements \Countable, \ArrayAccess, \Iterator
 {
     protected $properties = [
         'first',
@@ -12,12 +12,14 @@ class PopoloCollection implements \Countable, \ArrayAccess
     public $lookupFromKey;
     private $objectClass;
     private $objectArr;
+    private $position;
 
     /**
      *
      */
     public function __construct($dataArr, $objectClass, $allPopolo)
     {
+        $this->position = 0;
         $this->objectClass = $objectClass;
         $this->objectArr = [];
         foreach ($dataArr as $data) {
@@ -103,5 +105,35 @@ class PopoloCollection implements \Countable, \ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->objectArr[$offset]);
+    }
+
+    // Iterator interface
+    public function current()
+    {
+        return $this->objectArr[$this->position];
+    }
+
+    // Iterator interface
+    public function key()
+    {
+        return $this->position;
+    }
+
+    // Iterator interface
+    public function next()
+    {
+        $this->position += 1;
+    }
+
+    // Iterator interface
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    // Iterator interface
+    public function valid()
+    {
+        return array_key_exists($this->position, $this->objectArr);
     }
 }
