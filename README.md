@@ -20,8 +20,9 @@ $ composer require andylolz/everypolitician-popolo-php
 ## Usage
 
 ``` php
-$skeleton = new mySociety\EverypoliticianPopoloPhp();
-echo $skeleton->echoPhrase('Hello, League!');
+use \mySociety\EverypoliticianPopolo\Popolo;
+$popolo = Popolo::fromFilename($filename);
+var_dump($popolo->persons->first);
 ```
 
 ## Change log
