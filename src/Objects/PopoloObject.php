@@ -13,13 +13,6 @@ class PopoloObject
     protected $data;
     protected $allPopolo;
 
-    public function __toString()
-    {
-        $classPath = explode('\\', get_class($this));
-        $className = array_pop($classPath);
-        return "<$className: ".$this->label.">";
-    }
-
     /**
      *
      */
