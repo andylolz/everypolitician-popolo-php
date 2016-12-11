@@ -5,6 +5,7 @@ namespace mySociety\EveryPoliticianPopolo\Objects;
 class Area extends PopoloObject
 {
     protected $properties = [
+        'id',
         'name',
         'type',
         'identifiers',
@@ -15,6 +16,11 @@ class Area extends PopoloObject
     public function __toString()
     {
         return "<Area: ".$this->name.">";
+    }
+
+    protected function getId()
+    {
+         return $this->arrGet($this->data, 'id');
     }
 
     protected function getName()

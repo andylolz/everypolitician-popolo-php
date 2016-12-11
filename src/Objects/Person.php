@@ -9,6 +9,7 @@ class Person extends PopoloObject
     use \mySociety\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
 
     protected $properties = [
+        'id',
         'email',
         'gender',
         'honorificPrefix',
@@ -45,6 +46,11 @@ class Person extends PopoloObject
     public function __toString()
     {
         return "<Person: ".$this->name.">";
+    }
+
+    protected function getId()
+    {
+         return $this->arrGet($this->data, 'id');
     }
 
     protected function getEmail()

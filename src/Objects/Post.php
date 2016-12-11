@@ -5,10 +5,21 @@ namespace mySociety\EveryPoliticianPopolo\Objects;
 class Post extends PopoloObject
 {
     protected $properties = [
+        'id',
         'label',
         'organizationId',
         'organization',
     ];
+
+    public function __toString()
+    {
+        return "<Post: ".$this->label.">";
+    }
+
+    protected function getId()
+    {
+         return $this->arrGet($this->data, 'id');
+    }
 
     protected function getLabel()
     {

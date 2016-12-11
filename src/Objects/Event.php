@@ -5,6 +5,7 @@ namespace mySociety\EveryPoliticianPopolo\Objects;
 class Event extends PopoloObject
 {
     protected $properties = [
+        'id',
         'name',
         'classification',
         'startDate',
@@ -18,6 +19,11 @@ class Event extends PopoloObject
     public function __toString()
     {
         return "<Event: ".$this->name.">";
+    }
+
+    protected function getId()
+    {
+         return $this->arrGet($this->data, 'id');
     }
 
     protected function getName()

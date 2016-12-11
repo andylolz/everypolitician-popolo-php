@@ -8,7 +8,6 @@ class PopoloObject
 
     protected $properties = [];
     protected $baseProperties = [
-        'id',
         'keyForHash',
     ];
     protected $data;
@@ -38,11 +37,6 @@ class PopoloObject
             return $this->$getter();
         }
         trigger_error('Undefined property: '.__CLASS__.'::$'.$prop, E_USER_ERROR);
-    }
-
-    protected function getId()
-    {
-         return $this->arrGet($this->data, 'id');
     }
 
     protected function getKeyForHash()
