@@ -204,6 +204,7 @@ NOW;
         $this->assertFalse($event->currentAt(new \DateTime('2020-01-01')));
     }
 
+    // TODO: Need a way to mock current date
     // public function testTermCurrentTrue()
     // {
     //     $filename = $this->exampleFile(self::EXAMPLE_EVENT_JSON);
