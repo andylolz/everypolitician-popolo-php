@@ -9,6 +9,9 @@ class PopoloCollection implements \Countable, \ArrayAccess
     protected $properties = [
         'first',
     ];
+    public $lookupFromKey;
+    private $objectClass;
+    private $objectArr;
 
     /**
      *
