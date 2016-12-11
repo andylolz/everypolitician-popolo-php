@@ -4,11 +4,6 @@ namespace mySociety\EveryPoliticianPopolo\Objects;
 
 class Event extends PopoloObject
 {
-    public function __toString()
-    {
-        return "<Event: ".$this->name.">";
-    }
-
     protected $properties = [
         'name',
         'classification',
@@ -19,6 +14,11 @@ class Event extends PopoloObject
         'identifiers',
         'current',
     ];
+
+    public function __toString()
+    {
+        return "<Event: ".$this->name.">";
+    }
 
     protected function getName()
     {

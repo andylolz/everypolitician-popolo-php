@@ -6,18 +6,20 @@ class PopoloObject
 {
     use \mySociety\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
 
+    protected $properties = [];
+    protected $baseProperties = [
+        'id',
+        'keyForHash',
+    ];
+    protected $data;
+    protected $allPopolo;
+
     public function __toString()
     {
         $classPath = explode('\\', get_class($this));
         $className = array_pop($classPath);
         return "<$className: ".$this->label.">";
     }
-
-    protected $properties = [];
-    protected $baseProperties = [
-        'id',
-        'keyForHash',
-    ];
 
     /**
      *

@@ -4,11 +4,6 @@ namespace mySociety\EveryPoliticianPopolo\Objects;
 
 class Area extends PopoloObject
 {
-    public function __toString()
-    {
-        return "<Area: ".$this->name.">";
-    }
-
     protected $properties = [
         'name',
         'type',
@@ -16,6 +11,11 @@ class Area extends PopoloObject
         'otherNames',
         'wikidata',
     ];
+
+    public function __toString()
+    {
+        return "<Area: ".$this->name.">";
+    }
 
     protected function getName()
     {
