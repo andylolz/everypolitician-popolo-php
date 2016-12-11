@@ -634,7 +634,7 @@ NOW;
     }
 
     /**
-     * @expectedException Exception
+     * @expectedException        Exception
      * @expectedExceptionMessage Multiple names for <Person: Bob> found at date 1996-01-01
      */
     public function testPersonMultipleNamesAtOneDate()
