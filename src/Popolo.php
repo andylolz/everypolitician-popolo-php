@@ -6,28 +6,32 @@ class Popolo
 {
     use Traits\ArrayGetterTrait;
 
+    private $jsonData;
+    private $classes = [
+        'persons'       => 'PersonCollection',
+        'organizations' => 'OrganizationCollection',
+        'memberships'   => 'MembershipCollection',
+        'areas'         => 'AreaCollection',
+        'posts'         => 'PostCollection',
+        'events'        => 'EventCollection',
+    ];
+
     /**
      * Create a new Popolo Instance from
      */
     public function __construct($jsonData)
     {
         $this->jsonData = $jsonData;
+    }
 
-        // TODO: consider using __get here instead
-        $classes = [
-            'persons'       => 'PersonCollection',
-            'organizations' => 'OrganizationCollection',
-            'memberships'   => 'MembershipCollection',
-            'areas'         => 'AreaCollection',
-            'posts'         => 'PostCollection',
-            'events'        => 'EventCollection',
-        ];
-
-        foreach ($classes as $property => $collectionClassName) {
-            $collectionClassPath = 'mySociety\\EveryPoliticianPopolo\\Collections\\' . $collectionClassName;
-            $dataArr = $this->arrGet($jsonData, $property, []);
-            $this->$property = new $collectionClassPath($dataArr, $this);
+    public function __get($prop)
+    {
+        if (array_key_exists($prop, $this->classes)) {
+            $c = 'mySociety\\EveryPoliticianPopolo\\Collections\\'.$this->classes[$prop];
+            $dataArr = $this->arrGet($this->jsonData, $prop, []);
+            return new $c($dataArr, $this);
         }
+        trigger_error('Undefined property: '.__CLASS__.'::$'.$prop, E_USER_ERROR);
     }
 
     /**
