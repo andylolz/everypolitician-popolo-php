@@ -125,7 +125,7 @@ class PopoloObject
 
     public function equals($other)
     {
-        if (get_class($other) == get_class($this)) {
+        if (is_object($other) && get_class($other) == get_class($this)) {
             return $this->id == $other->id;
         }
         throw new \BadMethodCallException;

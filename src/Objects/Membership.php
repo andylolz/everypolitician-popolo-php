@@ -124,7 +124,7 @@ class Membership extends PopoloObject
 
     public function equals($other)
     {
-        if (get_class($other) == get_class($this)) {
+        if (is_object($other) && get_class($other) == get_class($this)) {
             return $this->data == $other->data;
         }
         throw new \BadMethodCallException;
