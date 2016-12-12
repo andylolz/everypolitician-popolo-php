@@ -70,7 +70,7 @@ class Membership extends PopoloObject
 
     protected function getLegislativePeriod()
     {
-        return $this->allPopolo->events->lookupFromKey[$this->eventId];
+        return $this->allPopolo->events->lookupFromKey[$this->legislativePeriodId];
     }
 
     protected function getOnBehalfOfId()
