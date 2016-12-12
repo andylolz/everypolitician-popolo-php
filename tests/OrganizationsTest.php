@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo;
+namespace EveryPolitician\EveryPoliticianPopolo;
 
 class OrganizationsTest extends \PHPUnit_Framework_TestCase
 {

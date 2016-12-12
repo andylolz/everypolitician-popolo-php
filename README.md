@@ -28,7 +28,7 @@ JSON data from the [EveryPolitician page for Åland](http://everypolitician.org/
 First you'll need to require the library and read in a file from disk.
 
 ``` php
-use \mySociety\EveryPoliticianPopolo\Popolo;
+use \EveryPolitician\EveryPoliticianPopolo\Popolo;
 $popolo = Popolo::fromFilename('ep-popolo-v1.0.json');
 ```
 

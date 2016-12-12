@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Objects;
+namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
 class Organization extends PopoloObject
 {

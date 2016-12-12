@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Collections;
+namespace EveryPolitician\EveryPoliticianPopolo\Collections;
 
 class AreaCollection extends PopoloCollection
 {

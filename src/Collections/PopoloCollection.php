@@ -1,8 +1,8 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Collections;
+namespace EveryPolitician\EveryPoliticianPopolo\Collections;
 
-use \mySociety\EveryPoliticianPopolo\Exceptions;
+use \EveryPolitician\EveryPoliticianPopolo\Exceptions;
 
 class PopoloCollection implements \Countable, \ArrayAccess, \Iterator
 {

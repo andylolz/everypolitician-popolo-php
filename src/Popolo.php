@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo;
+namespace EveryPolitician\EveryPoliticianPopolo;
 
 class Popolo
 {
@@ -28,8 +28,8 @@ class Popolo
     {
         if (array_key_exists($prop, $this->collections)) {
             $c = $this->collections[$prop];
-            $objectClass = 'mySociety\\EveryPoliticianPopolo\\Objects\\'.$c[0];
-            $collectionClass = 'mySociety\\EveryPoliticianPopolo\\Collections\\'.$c[1];
+            $objectClass = 'EveryPolitician\\EveryPoliticianPopolo\\Objects\\'.$c[0];
+            $collectionClass = 'EveryPolitician\\EveryPoliticianPopolo\\Collections\\'.$c[1];
             $dataArr = $this->arrGet($this->jsonData, $prop, []);
             return new $collectionClass($dataArr, $objectClass, $this);
         }

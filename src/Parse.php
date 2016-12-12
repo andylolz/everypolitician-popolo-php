@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo;
+namespace EveryPolitician\EveryPoliticianPopolo;
 
 class Parse
 {

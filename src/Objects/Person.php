@@ -1,12 +1,12 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Objects;
+namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
-use \mySociety\EveryPoliticianPopolo\Parse;
+use \EveryPolitician\EveryPoliticianPopolo\Parse;
 
 class Person extends PopoloObject
 {
-    use \mySociety\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
+    use \EveryPolitician\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
 
     protected $properties = [
         'id',

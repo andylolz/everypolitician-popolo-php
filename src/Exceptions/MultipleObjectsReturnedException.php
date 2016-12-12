@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Exceptions;
+namespace EveryPolitician\EveryPoliticianPopolo\Exceptions;
 
 class MultipleObjectsReturnedException extends \Exception
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Objects;
+namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
 class PopoloObject
 {
-    use \mySociety\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
+    use \EveryPolitician\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
 
     protected $properties = [];
     protected $baseProperties = [

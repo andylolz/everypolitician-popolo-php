@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo\Traits;
+namespace EveryPolitician\EveryPoliticianPopolo\Traits;
 
 trait ArrayGetterTrait
 {

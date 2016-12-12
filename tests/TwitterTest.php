@@ -1,8 +1,8 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo;
+namespace EveryPolitician\EveryPoliticianPopolo;
 
-use \mySociety\EveryPoliticianPopolo\Parse;
+use \EveryPolitician\EveryPoliticianPopolo\Parse;
 
 class TwitterTest extends \PHPUnit_Framework_TestCase
 {

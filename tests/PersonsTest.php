@@ -1,6 +1,6 @@
 <?php
 
-namespace mySociety\EveryPoliticianPopolo;
+namespace EveryPolitician\EveryPoliticianPopolo;
 
 class PersonsTest extends \PHPUnit_Framework_TestCase
 {
@@ -100,7 +100,7 @@ NOW;
     }
 
     /**
-     * @expectedException mySociety\EveryPoliticianPopolo\Exceptions\ObjectDoesNotExistException
+     * @expectedException EveryPolitician\EveryPoliticianPopolo\Exceptions\ObjectDoesNotExistException
      */
     public function testGetOfPeopleNoneMatching()
     {
@@ -112,7 +112,7 @@ NOW;
     }
 
     /**
-     * @expectedException mySociety\EveryPoliticianPopolo\Exceptions\MultipleObjectsReturnedException
+     * @expectedException EveryPolitician\EveryPoliticianPopolo\Exceptions\MultipleObjectsReturnedException
      */
     public function testGetOfPeopleMultipleMatches()
     {

@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "mySociety\\EveryPoliticianPopolo\\": "src"
+            "EveryPolitician\\EveryPoliticianPopolo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "mySociety\\EveryPoliticianPopolo\\": "tests"
+            "EveryPolitician\\EveryPoliticianPopolo\\": "tests"
         }
     },
     "scripts": {
