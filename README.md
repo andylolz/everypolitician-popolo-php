@@ -19,10 +19,65 @@ $ composer require andylolz/everypolitician-popolo
 
 ## Usage
 
+You can download a Popolo file manually from [EveryPolitician](http://everypolitician.org/).
+
+The following example uses [Åland Lagting](https://github.com/everypolitician/everypolitician-data/raw/master/data/Aland/Lagting/ep-popolo-v1.0.json)
+(which is the legislature of the Åland islands, available as
+JSON data from the [EveryPolitician page for Åland](http://everypolitician.org/aland/)).
+
+First you'll need to require the library and read in a file from disk.
+
 ``` php
-use \mySociety\EverypoliticianPopolo\Popolo;
-$popolo = Popolo::fromFilename($filename);
-var_dump($popolo->persons->first);
+use \mySociety\EveryPoliticianPopolo\Popolo;
+$popolo = Popolo::fromFilename('ep-popolo-v1.0.json');
+```
+
+All Popolo classes used by EveryPolitician are implemented:
+
+ * [Person](http://www.popoloproject.com/specs/person.html)
+ * [Organization](http://www.popoloproject.com/specs/organization.html)
+ * [Area](http://www.popoloproject.com/specs/area.html)
+ * [Event](http://www.popoloproject.com/specs/event.html)
+ * [Membership](http://www.popoloproject.com/specs/membership.html)
+
+There are methods defined for each property on a class, e.g. for a
+Person:
+
+``` php
+count($popolo->persons); // 60
+$person = $popolo->persons->first;
+echo $person->id; // e3aab23e-a883-4763-be0d-92e5936024e2
+echo $person->name; // Aaltonen Carina
+echo $person->image; // http://www.lagtinget.ax/files/aaltonen_carina.jpg
+echo $person->wikidata; // Q4934081
+```
+
+You can also find individual records or collections based on their
+attributes:
+
+``` php
+echo $popolo->persons->get(["name" => "Aaltonen Carina"]); // <Person: Aaltonen Carina>
+
+$organizations = $popolo->organizations->filter(["classification" => "party"]);
+foreach ($organizations as $organization) {
+    echo $organization;
+}
+// <Organization: Liberalerna>
+// <Organization: Liberalerna på Åland r.f.>
+// <Organization: Moderat Samling>
+// <Organization: Moderat Samling på Åland r.f.>
+// <Organization: Moderat samling>
+// <Organization: Moderaterna på Åland>
+// <Organization: Obunden Samling>
+// <Organization: Obunden Samling på Åland>
+// <Organization: Ålands Framtid>
+// <Organization: Ålands Socialdemokrater>
+// <Organization: Ålands framtid>
+// <Organization: Ålands socialdemokrater>
+// <Organization: Åländsk Center>
+// <Organization: Åländsk Center r.f.>
+// <Organization: Åländsk Demokrati>
+// <Organization: Åländsk center>
 ```
 
 ## Change log
