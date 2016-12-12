@@ -34,7 +34,12 @@ class PopoloObject
 
     protected function getKeyForHash()
     {
-         return $this->getId();
+        return $this->getId();
+    }
+
+    protected function getId()
+    {
+        return null;
     }
 
     private function getRelatedObjects($popoloArray)
