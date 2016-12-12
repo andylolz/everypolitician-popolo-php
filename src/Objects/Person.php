@@ -216,7 +216,7 @@ class Person extends PopoloObject
     {
         $memberships = [];
         foreach ($this->allPopolo->memberships as $m) {
-            if ($m->person_id == $this->id) {
+            if ($m->personId == $this->id) {
                 $memberships[] = $m;
             }
         }
