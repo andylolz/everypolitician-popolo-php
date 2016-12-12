@@ -31,6 +31,11 @@ class PopoloCollection implements \Countable, \ArrayAccess, \Iterator
         }
     }
 
+    public function __toString()
+    {
+        return '<'.get_class($this).'>';
+    }
+
     public function __get($prop)
     {
         if (in_array($prop, $this->properties)) {
