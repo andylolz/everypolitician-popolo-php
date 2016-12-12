@@ -62,7 +62,7 @@ class Popolo
     {
         $client = $client ?: new \GuzzleHttp\Client();
         $response = $client->get($url);
-        $jsonData = json_decode($response->getBody()->getContents(), true);
+        $jsonData = json_decode($response->getBody(), true);
         $instance = new self($jsonData);
         return $instance;
     }
