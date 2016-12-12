@@ -38,7 +38,8 @@ class Organization extends PopoloObject
         return $this->identifierValue('wikidata');
     }
 
-    protected function getClassification() {
+    protected function getClassification()
+    {
         return $this->arrGet($this->data, 'classification');
     }
 
