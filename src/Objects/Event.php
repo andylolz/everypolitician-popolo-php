@@ -63,13 +63,13 @@ class Event extends PopoloObject
         return $this->getRelatedObjectArr('identifiers');
     }
 
-    public function currentAt($when)
-    {
-        return ($when >= $this->startDate && $when <= $this->endDate);
-    }
-
     protected function getCurrent()
     {
         return $this->currentAt(new \DateTime);
+    }
+
+    public function currentAt($when)
+    {
+        return ($when >= $this->startDate && $when <= $this->endDate);
     }
 }
