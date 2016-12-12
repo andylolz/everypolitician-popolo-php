@@ -20,6 +20,7 @@ class Membership extends PopoloObject
         'post',
         'startDate',
         'endDate',
+        'current',
     ];
 
     public function __toString()
@@ -109,6 +110,16 @@ class Membership extends PopoloObject
         $sortedData = $this->data;
         ksort($sortedData);
         return json_encode($sortedData);
+    }
+
+    protected function getCurrent()
+    {
+        return $this->currentAt(new \DateTime);
+    }
+
+    public function currentAt($when)
+    {
+        return ($when >= $this->startDate && $when <= $this->endDate);
     }
 
     public function equals($other)
