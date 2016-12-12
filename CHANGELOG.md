@@ -1,8 +1,13 @@
-# Changelog
+# everypolitician-popolo-php Changelog
 
-All Notable changes to `everypolitician-popolo-php` will be documented in this file. Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+## 0.0.2
 
-## 0.0.1 - 2016-12-12
+_Released: 2016-12-12_
 
-### Added
-- All the things
+- Switched vendor from mySociety to EveryPolitician
+
+## 0.0.1
+
+_Released: 2016-12-12_
+
+- Added all the things
