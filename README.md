@@ -14,7 +14,7 @@ This is a port of the Python package [everypolitician-popolo-python](https://git
 Via Composer
 
 ``` bash
-$ composer require andylolz/everypolitician-popolo-php
+$ composer require andylolz/everypolitician-popolo
 ```
 
 ## Usage
@@ -59,10 +59,10 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/andylolz/everypolitician-popolo-php.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/andylolz/everypolitician-popolo-php.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/andylolz/everypolitician-popolo-php
+[link-packagist]: https://packagist.org/packages/andylolz/everypolitician-popolo
 [link-travis]: https://travis-ci.org/andylolz/everypolitician-popolo-php
 [link-scrutinizer]: https://scrutinizer-ci.com/g/andylolz/everypolitician-popolo-php/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/andylolz/everypolitician-popolo-php
-[link-downloads]: https://packagist.org/packages/andylolz/everypolitician-popolo-php
+[link-downloads]: https://packagist.org/packages/andylolz/everypolitician-popolo
 [link-author]: https://github.com/andylolz
 [link-contributors]: ../../contributors

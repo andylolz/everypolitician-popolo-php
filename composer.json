@@ -1,9 +1,10 @@
 {
-    "name": "andylolz/everypolitician-popolo-php",
+    "name": "andylolz/everypolitician-popolo",
     "type": "library",
     "description": "Parse Popolo JSON data and navigate it with PHP",
     "keywords": [
-        "everypolitician-popolo-php"
+        "everypolitician",
+        "popolo"
     ],
     "homepage": "https://github.com/andylolz/everypolitician-popolo-php",
     "license": "MIT",
