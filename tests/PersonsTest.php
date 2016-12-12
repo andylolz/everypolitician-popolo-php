@@ -673,6 +673,9 @@ NOW;
         // Not sure how to implement this test in PHP!
     }
 
+    /**
+     * @expectedException BadMethodCallException
+     */
     public function testEqualityAndInequalityNotImplemented()
     {
         $filename = $this->exampleFile(self::EXAMPLE_TWO_PEOPLE);
@@ -680,7 +683,6 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->assertFalse($person == "a string, not a person");
-        $this->assertNotEquals($person, "a string not a person");
+        $this->assertFalse($person->equals("a string, not a person"));
     }
 }
