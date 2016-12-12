@@ -107,12 +107,12 @@ If you discover any security related issues, please email a.lulham@gmail.com ins
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/andylolz/everypolitician-popolo-php.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/andylolz/everypolitician-popolo.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/andylolz/everypolitician-popolo-php/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/andylolz/everypolitician-popolo-php.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/andylolz/everypolitician-popolo-php.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/andylolz/everypolitician-popolo-php.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/andylolz/everypolitician-popolo.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/andylolz/everypolitician-popolo
 [link-travis]: https://travis-ci.org/andylolz/everypolitician-popolo-php
