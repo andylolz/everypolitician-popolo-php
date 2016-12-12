@@ -23,17 +23,17 @@ class Event extends PopoloObject
 
     protected function getId()
     {
-         return $this->arrGet($this->data, 'id');
+        return $this->arrGet($this->data, 'id');
     }
 
     protected function getName()
     {
-         return $this->arrGet($this->data, 'name');
+        return $this->arrGet($this->data, 'name');
     }
 
     protected function getClassification()
     {
-         return $this->arrGet($this->data, 'classification');
+        return $this->arrGet($this->data, 'classification');
     }
 
     protected function getStartDate()
@@ -50,12 +50,12 @@ class Event extends PopoloObject
 
     protected function getOrganizationId()
     {
-         return $this->arrGet($this->data, 'organization_id');
+        return $this->arrGet($this->data, 'organization_id');
     }
 
     protected function getOrganization()
     {
-         return $this->allPopolo->organizations->lookupFromKey[$this->organizationId];
+        return $this->allPopolo->organizations->lookupFromKey[$this->organizationId];
     }
 
     protected function getIdentifiers()
