@@ -120,4 +120,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-code-quality]: https://scrutinizer-ci.com/g/andylolz/everypolitician-popolo-php
 [link-downloads]: https://packagist.org/packages/andylolz/everypolitician-popolo
 [link-author]: https://github.com/andylolz
-[link-contributors]: ../../contributors
+[link-contributors]: https://github.com/andylolz/everypolitician-popolo-php/contributors
