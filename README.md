@@ -82,7 +82,7 @@ foreach ($organizations as $organization) {
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for information on what has changed recently.
 
 ## Testing
 
