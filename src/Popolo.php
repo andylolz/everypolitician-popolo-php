@@ -58,9 +58,9 @@ class Popolo
      *
      * @return $this
      */
-    public static function fromUrl($url, $client = null)
+    public static function fromUrl($url)
     {
-        $client = $client ?: new \GuzzleHttp\Client();
+        $client = new \GuzzleHttp\Client();
         $response = $client->get($url);
         $jsonData = json_decode($response->getBody(), true);
         $instance = new self($jsonData);

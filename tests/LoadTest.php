@@ -32,10 +32,12 @@ class LoadTest extends \PHPUnit_Framework_TestCase
             'persons' => [['name' => 'Joe Bloggs']]
         ]);
         $response = new \GuzzleHttp\Psr7\Response(200, ['Content-Type' => 'application/json'], $body);
-        $client = \Mockery::mock('\GuzzleHttp\Client');
-        $client->shouldReceive('get')->once()->andReturn($response);
+        $m = \Mockery::mock('overload:\GuzzleHttp\Client')
+            ->shouldReceive('get')
+            ->andReturn($response)
+            ->mock();
 
-        $popolo = Popolo::fromUrl('http://example.org/popolo.json', $client);
+        $popolo = Popolo::fromUrl('http://example.org/popolo.json');
         $this->assertEquals('Joe Bloggs', $popolo->persons->first->name);
     }
 }
