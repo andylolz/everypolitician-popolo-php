@@ -3,8 +3,13 @@
 namespace EveryPolitician\EveryPoliticianPopolo;
 
 use \EveryPolitician\EveryPoliticianPopolo\Parse;
+use \PHPUnit_Framework_TestCase;
 
-class TwitterTest extends \PHPUnit_Framework_TestCase
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class TwitterTest extends PHPUnit_Framework_TestCase
 {
     public function testStripWhitespace()
     {

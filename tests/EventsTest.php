@@ -3,10 +3,20 @@
 namespace EveryPolitician\EveryPoliticianPopolo;
 
 use \DateTime;
+use \PHPUnit_Framework_TestCase;
 
-class EventsTest extends \PHPUnit_Framework_TestCase
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class EventsTest extends PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
+
+    public function setUp()
+    {
+        date_default_timezone_set('Europe/London');
+    }
 
     const EXAMPLE_EVENT_JSON = <<<'NOW'
 {

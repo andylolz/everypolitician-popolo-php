@@ -3,10 +3,20 @@
 namespace EveryPolitician\EveryPoliticianPopolo;
 
 use \DateTime;
+use \PHPUnit_Framework_TestCase;
 
-class OrganizationsTest extends \PHPUnit_Framework_TestCase
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class OrganizationsTest extends PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
+
+    public function setUp()
+    {
+        date_default_timezone_set('Europe/London');
+    }
 
     public function testEmptyFileGivesNoOrganizations()
     {

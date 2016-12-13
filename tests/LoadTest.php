@@ -4,8 +4,13 @@ namespace EveryPolitician\EveryPoliticianPopolo;
 
 use \GuzzleHttp;
 use \Mockery;
+use \PHPUnit_Framework_TestCase;
 
-class LoadTest extends \PHPUnit_Framework_TestCase
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class LoadTest extends PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
 

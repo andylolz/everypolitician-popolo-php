@@ -2,7 +2,13 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
-class PostsTest extends \PHPUnit_Framework_TestCase
+use \PHPUnit_Framework_TestCase;
+
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class PostsTest extends PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
 

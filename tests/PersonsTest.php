@@ -3,8 +3,13 @@
 namespace EveryPolitician\EveryPoliticianPopolo;
 
 use \DateTime;
+use \PHPUnit_Framework_TestCase;
 
-class PersonsTest extends \PHPUnit_Framework_TestCase
+/**
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class PersonsTest extends PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
 
@@ -24,6 +29,11 @@ class PersonsTest extends \PHPUnit_Framework_TestCase
     ]
 }
 NOW;
+
+    public function setUp()
+    {
+        date_default_timezone_set('Europe/London');
+    }
 
     public function testEmptyFileGivesNoPeople()
     {
