@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \GuzzleHttp;
+
 class Popolo
 {
     use Traits\ArrayGetterTrait;
@@ -60,7 +62,7 @@ class Popolo
      */
     public static function fromUrl($url)
     {
-        $client = new \GuzzleHttp\Client();
+        $client = new GuzzleHttp\Client();
         $response = $client->get($url);
         $jsonData = json_decode($response->getBody(), true);
         $instance = new self($jsonData);

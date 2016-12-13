@@ -2,13 +2,16 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \GuzzleHttp;
+use \Mockery;
+
 class LoadTest extends \PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
 
     public function tearDown()
     {
-        \Mockery::close();
+        Mockery::close();
     }
 
     public function testCanCreateFromAFilename()
@@ -31,8 +34,8 @@ class LoadTest extends \PHPUnit_Framework_TestCase
         $body = json_encode([
             'persons' => [['name' => 'Joe Bloggs']]
         ]);
-        $response = new \GuzzleHttp\Psr7\Response(200, ['Content-Type' => 'application/json'], $body);
-        $m = \Mockery::mock('overload:\GuzzleHttp\Client')
+        $response = new GuzzleHttp\Psr7\Response(200, ['Content-Type' => 'application/json'], $body);
+        $m = Mockery::mock('overload:\GuzzleHttp\Client')
             ->shouldReceive('get')
             ->andReturn($response)
             ->mock();

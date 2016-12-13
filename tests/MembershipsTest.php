@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \DateTime;
+
 class MembershipsTest extends \PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
@@ -199,7 +201,7 @@ NOW;
 
         $this->assertCount(1, $popolo->memberships);
         $m = $popolo->memberships[0];
-        $this->assertEquals(new \DateTime('2327-12-01'), $m->startDate);
+        $this->assertEquals(new DateTime('2327-12-01'), $m->startDate);
     }
 
     // public function testGetSentinelEndDateFromMembership()
@@ -326,7 +328,7 @@ NOW;
         unlink($filename);
 
         $m = $popolo->memberships[0];
-        $this->assertTrue($m->currentAt(new \DateTime('1784-04-30')));
+        $this->assertTrue($m->currentAt(new DateTime('1784-04-30')));
     }
 
     public function testMembershipCurrentAtFalseBefore()
@@ -336,7 +338,7 @@ NOW;
         unlink($filename);
 
         $m = $popolo->memberships[0];
-        $this->assertFalse($m->currentAt(new \DateTime('1600-01-01')));
+        $this->assertFalse($m->currentAt(new DateTime('1600-01-01')));
     }
 
     public function testMembershipCurrentAtFalseAfter()
@@ -346,7 +348,7 @@ NOW;
         unlink($filename);
 
         $m = $popolo->memberships[0];
-        $this->assertFalse($m->currentAt(new \DateTime('1800-01-01')));
+        $this->assertFalse($m->currentAt(new DateTime('1800-01-01')));
     }
 
     // public function testMembershipCurrentTrue()

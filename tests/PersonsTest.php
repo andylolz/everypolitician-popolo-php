@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \DateTime;
+
 class PersonsTest extends \PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
@@ -41,7 +43,7 @@ NOW;
         $this->assertCount(1, $popolo->persons);
         $person = $popolo->persons[0];
         $this->assertEquals('Harry Truman', $person->name);
-        $this->assertEquals('Harry Truman', $person->nameAt(new \DateTime('2016-01-11')));
+        $this->assertEquals('Harry Truman', $person->nameAt(new DateTime('2016-01-11')));
     }
 
     public function testGetFirstPerson()
@@ -353,8 +355,8 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->assertEquals(new \DateTime('1946-01-24'), $person->birthDate);
-        $this->assertEquals(new \DateTime('2099-12-31'), $person->deathDate);
+        $this->assertEquals(new DateTime('1946-01-24'), $person->birthDate);
+        $this->assertEquals(new DateTime('2099-12-31'), $person->deathDate);
     }
 
     public function testPhoneAndFax()
@@ -578,7 +580,7 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->assertEquals('Bob', $person->nameAt(new \DateTime('2016-01-11')));
+        $this->assertEquals('Bob', $person->nameAt(new DateTime('2016-01-11')));
     }
 
     public function testPersonNameAtHistoric()
@@ -604,7 +606,7 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->assertEquals('Robert', $person->nameAt(new \DateTime('1990-06-01')));
+        $this->assertEquals('Robert', $person->nameAt(new DateTime('1990-06-01')));
     }
 
     public function testPersonNameAtHistoricNoneOverlap()
@@ -630,7 +632,7 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $this->assertEquals('Bob', $person->nameAt(new \DateTime('2000-01-01')));
+        $this->assertEquals('Bob', $person->nameAt(new DateTime('2000-01-01')));
     }
 
     /**
@@ -665,7 +667,7 @@ NOW;
         unlink($filename);
 
         $person = $popolo->persons->first;
-        $person->nameAt(new \DateTime('1996-01-01'));
+        $person->nameAt(new DateTime('1996-01-01'));
     }
 
     public function testHashMagicMethod()

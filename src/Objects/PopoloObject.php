@@ -2,9 +2,12 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
+use \DateTime;
+use \EveryPolitician\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
+
 class PopoloObject
 {
-    use \EveryPolitician\EveryPoliticianPopolo\Traits\ArrayGetterTrait;
+    use ArrayGetterTrait;
 
     protected $properties = [];
     protected $baseProperties = [
@@ -51,7 +54,7 @@ class PopoloObject
     {
         $d = $this->arrGet($this->data, $attr);
         if ($d) {
-            return new \DateTime($d);
+            return new DateTime($d);
         }
         return $default;
     }

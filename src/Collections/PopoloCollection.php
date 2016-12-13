@@ -2,9 +2,12 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Collections;
 
+use \Countable;
+use \ArrayAccess;
+use \Iterator;
 use \EveryPolitician\EveryPoliticianPopolo\Exceptions;
 
-class PopoloCollection implements \Countable, \ArrayAccess, \Iterator
+class PopoloCollection implements Countable, ArrayAccess, Iterator
 {
     protected $properties = [
         'first',

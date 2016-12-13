@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Exceptions;
 
-class MultipleObjectsReturnedException extends \Exception
+use \Exception;
+
+class MultipleObjectsReturnedException extends Exception
 {
 }

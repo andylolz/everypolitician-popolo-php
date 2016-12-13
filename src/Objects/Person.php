@@ -2,6 +2,7 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
+use \Exception;
 use \EveryPolitician\EveryPoliticianPopolo\Parse;
 
 class Person extends PopoloObject
@@ -253,7 +254,7 @@ class Person extends PopoloObject
         if (count($namesAtDate) > 1) {
             $msg = 'Multiple names for ' . (string) $this;
             $msg .= ' found at date ' . $particularDate->format('Y-m-d');
-            throw new \Exception($msg);
+            throw new Exception($msg);
         }
         return $namesAtDate[0]['name'];
     }

@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \DateTime;
+
 class OrganizationsTest extends \PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
@@ -196,8 +198,8 @@ NOW;
             ]
         ]);
         $o = $popolo->organizations->first;
-        $this->assertEquals(new \DateTime('1950-01-20'), $o->foundingDate);
-        $this->assertEquals(new \DateTime('2000-11-15'), $o->dissolutionDate);
+        $this->assertEquals(new DateTime('1950-01-20'), $o->foundingDate);
+        $this->assertEquals(new DateTime('2000-11-15'), $o->dissolutionDate);
     }
 
     public function testOrganizationOtherNames()

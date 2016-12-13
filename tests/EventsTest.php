@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo;
 
+use \DateTime;
+
 class EventsTest extends \PHPUnit_Framework_TestCase
 {
     use ExampleFileTrait;
@@ -79,8 +81,8 @@ NOW;
         unlink($filename);
 
         $event = $popolo->events->first;
-        $this->assertEquals(new \DateTime('2011-03-27'), $event->startDate);
-        $this->assertEquals(new \DateTime('2015-03-23'), $event->endDate);
+        $this->assertEquals(new DateTime('2011-03-27'), $event->startDate);
+        $this->assertEquals(new DateTime('2015-03-23'), $event->endDate);
     }
 
     public function testEventId()
@@ -181,7 +183,7 @@ NOW;
         unlink($filename);
 
         $event = $popolo->events[0];
-        $this->assertTrue($event->currentAt(new \DateTime('2013-01-01')));
+        $this->assertTrue($event->currentAt(new DateTime('2013-01-01')));
     }
 
     public function testTermCurrentAtFalseBefore()
@@ -191,7 +193,7 @@ NOW;
         unlink($filename);
 
         $event = $popolo->events[0];
-        $this->assertFalse($event->currentAt(new \DateTime('1980-01-01')));
+        $this->assertFalse($event->currentAt(new DateTime('1980-01-01')));
     }
 
     public function testTermCurrentAtFalseAfter()
@@ -201,7 +203,7 @@ NOW;
         unlink($filename);
 
         $event = $popolo->events[0];
-        $this->assertFalse($event->currentAt(new \DateTime('2020-01-01')));
+        $this->assertFalse($event->currentAt(new DateTime('2020-01-01')));
     }
 
     // TODO: Need a way to mock current date

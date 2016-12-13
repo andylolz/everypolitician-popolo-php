@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Exceptions;
 
-class ObjectDoesNotExistException extends \Exception
+use \Exception;
+
+class ObjectDoesNotExistException extends Exception
 {
 }

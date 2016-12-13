@@ -2,6 +2,8 @@
 
 namespace EveryPolitician\EveryPoliticianPopolo\Objects;
 
+use \DateTime;
+
 class Event extends PopoloObject
 {
     protected $properties = [
@@ -65,7 +67,7 @@ class Event extends PopoloObject
 
     protected function getCurrent()
     {
-        return $this->currentAt(new \DateTime);
+        return $this->currentAt(new DateTime);
     }
 
     public function currentAt($when)
