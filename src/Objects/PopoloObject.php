@@ -133,6 +133,7 @@ class PopoloObject
         if (is_object($other) && get_class($other) == get_class($this)) {
             return $this->id == $other->id;
         }
+        // TODO: Throw a custom exception here
         throw new \BadMethodCallException;
     }
 
