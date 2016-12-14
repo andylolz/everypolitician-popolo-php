@@ -44,6 +44,13 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         return '<'.get_class($this).'>';
     }
 
+    /**
+     * Getter for public attributes
+     *
+     * @param string $prop the attribute to get
+     *
+     * @return mixed
+     */
     public function __get($prop)
     {
         if (in_array($prop, $this->properties)) {
@@ -53,11 +60,26 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         trigger_error('Undefined property: '.__CLASS__.'::$'.$prop, E_USER_ERROR);
     }
 
+    /**
+     * Get the first item in this collection
+     *
+     * @return mixed
+     */
     private function getFirst()
     {
         return (count($this->objectArr) > 0) ? $this->objectArr[0] : null;
     }
 
+    /**
+     * Gets an array of matching items, according to the
+     * array of filters provided. Filters are key-value pairs
+     * that are ANDed together, i.e. returned items match all
+     * the criteria
+     *
+     * @param string[] $filters key-value set of criteria
+     *
+     * @return object[]
+     */
     public function filter($filters)
     {
         $filtered = [];
@@ -76,6 +98,17 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         return $filtered;
     }
 
+    /**
+     * Gets a single matching item, according to the
+     * array of filters provided. Filters are key-value pairs
+     * that are ANDed together, i.e. returned items match all
+     * the criteria. If more or less than one item matches,
+     * an exception is thrown
+     *
+     * @param string[] $filters key-value set of criteria
+     *
+     * @return object
+     */
     public function get($filters)
     {
         $matches = $this->filter($filters);
