@@ -1,7 +1,7 @@
 {
     "name": "andylolz/everypolitician-popolo",
     "type": "library",
-    "description": "Parse Popolo JSON data and navigate it with PHP",
+    "description": "Parse EveryPolitician-flavoured Popolo data, and navigate it with PHP",
     "keywords": [
         "everypolitician",
         "popolo"
