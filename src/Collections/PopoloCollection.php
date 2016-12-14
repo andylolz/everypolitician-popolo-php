@@ -18,7 +18,7 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
     private $position;
 
     /**
-     *
+     * Creates a new instance
      */
     public function __construct($dataArr, $objectClass, $allPopolo)
     {
@@ -34,6 +34,11 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         }
     }
 
+    /**
+     * String representation of {@link PopoloCollection}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return '<'.get_class($this).'>';
@@ -85,61 +90,122 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         return $matches[0];
     }
 
-    // Countable interface
+    /**
+     * Count elements of an object
+     *
+     * Part of the Countable interface
+     *
+     * @return int
+     */
     public function count()
     {
         return count($this->objectArr);
     }
 
-    // ArrayAccess interface
+    /**
+     * Checks if current position is valid
+     *
+     * Part of the ArrayAccess interface
+     *
+     * @param mixed $offset array offset
+     *
+     * @return boolean
+     */
     public function offsetExists($offset)
     {
         return array_key_exists($offset, $this->objectArr);
     }
 
-    // ArrayAccess interface
+    /**
+     * Offset to retrieve
+     *
+     * Part of the ArrayAccess interface
+     *
+     * @param mixed $offset array offset
+     *
+     * @return mixed
+     */
     public function offsetGet($offset)
     {
         return $this->objectArr[$offset];
     }
 
-    // ArrayAccess interface
+    /**
+     * Assign a value to the specified offset
+     *
+     * Part of the ArrayAccess interface
+     *
+     * @param mixed $offset array offset
+     * @param mixed $value value to assign
+     */
     public function offsetSet($offset, $value)
     {
         $this->objectArr[$offset] = $value;
     }
 
-    // ArrayAccess interface
+    /**
+     * Unset an offset
+     *
+     * Part of the ArrayAccess interface
+     *
+     * @param mixed $offset array offset
+     */
     public function offsetUnset($offset)
     {
         unset($this->objectArr[$offset]);
     }
 
-    // Iterator interface
+    /**
+     * Return the current element
+     *
+     * Part of the Iterator interface
+     *
+     * @return mixed
+     */
     public function current()
     {
         return $this->objectArr[$this->position];
     }
 
-    // Iterator interface
+    /**
+     * Return the key of the current element
+     *
+     * Part of the Iterator interface
+     *
+     * @return scalar
+     */
     public function key()
     {
         return $this->position;
     }
 
-    // Iterator interface
+    /**
+     * Move forward to next element
+     *
+     * Part of the Iterator interface
+     */
     public function next()
     {
         $this->position += 1;
     }
 
-    // Iterator interface
+    /**
+     * Rewind the Iterator to the first element
+     *
+     * Part of the Iterator interface
+     */
     public function rewind()
     {
         $this->position = 0;
     }
 
-    // Iterator interface
+    /**
+     * Checks if current position is valid
+     *
+     * Part of the Iterator interface
+     *
+     * @return boolean
+     */
     public function valid()
     {
         return array_key_exists($this->position, $this->objectArr);
