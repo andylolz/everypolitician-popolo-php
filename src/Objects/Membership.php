@@ -25,6 +25,11 @@ class Membership extends PopoloObject
         'current',
     ];
 
+    /**
+     * String representation of {@link Membership}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Membership: '".$this->personId."' at '".$this->organizationId."'>";

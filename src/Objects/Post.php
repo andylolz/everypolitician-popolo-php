@@ -11,6 +11,11 @@ class Post extends PopoloObject
         'organization',
     ];
 
+    /**
+     * String representation of {@link Post}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Post: ".$this->label.">";

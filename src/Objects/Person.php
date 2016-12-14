@@ -44,6 +44,11 @@ class Person extends PopoloObject
         'memberships',
     ];
 
+    /**
+     * String representation of {@link Person}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Person: ".$this->name.">";

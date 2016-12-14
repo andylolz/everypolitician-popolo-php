@@ -17,7 +17,7 @@ class PopoloObject
     protected $allPopolo;
 
     /**
-     *
+     * Creates a new instance
      */
     public function __construct($data, $allPopolo)
     {
@@ -25,6 +25,13 @@ class PopoloObject
         $this->allPopolo = $allPopolo;
     }
 
+    /**
+     * Getter for public attributes
+     *
+     * @param string $prop the attribute to get
+     *
+     * @return mixed
+     */
     public function __get($prop)
     {
         $properties = array_merge($this->baseProperties, $this->properties);

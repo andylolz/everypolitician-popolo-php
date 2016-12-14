@@ -18,6 +18,11 @@ class Event extends PopoloObject
         'current',
     ];
 
+    /**
+     * String representation of {@link Event}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Event: ".$this->name.">";

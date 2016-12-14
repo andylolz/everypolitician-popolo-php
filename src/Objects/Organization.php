@@ -18,6 +18,11 @@ class Organization extends PopoloObject
         'links',
     ];
 
+    /**
+     * String representation of {@link Organization}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Organization: ".$this->name.">";

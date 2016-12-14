@@ -13,6 +13,11 @@ class Area extends PopoloObject
         'wikidata',
     ];
 
+    /**
+     * String representation of {@link Area}
+     *
+     * @return string
+     */
     public function __toString()
     {
         return "<Area: ".$this->name.">";
