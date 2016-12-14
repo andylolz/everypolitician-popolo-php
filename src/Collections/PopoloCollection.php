@@ -54,7 +54,7 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
     public function __get($prop)
     {
         if (in_array($prop, $this->properties)) {
-            $getter = 'get' . ucfirst($prop);
+            $getter = 'get'.ucfirst($prop);
             return $this->$getter();
         }
         trigger_error('Undefined property: '.__CLASS__.'::$'.$prop, E_USER_ERROR);
@@ -114,10 +114,10 @@ class PopoloCollection implements Countable, ArrayAccess, Iterator
         $matches = $this->filter($filters);
         $n = count($matches);
         if ($n == 0) {
-            $msg = "No " . $this->objectClass . " found matching " . json_encode($filters);
+            $msg = "No ".$this->objectClass." found matching ".json_encode($filters);
             throw new Exceptions\ObjectDoesNotExistException($msg);
         } elseif ($n > 1) {
-            $msg = "Multiple " . $this->objectClass . " objects ($n) found matching " . json_encode($filters);
+            $msg = "Multiple ".$this->objectClass." objects ($n) found matching ".json_encode($filters);
             throw new Exceptions\MultipleObjectsReturnedException($msg);
         }
         return $matches[0];

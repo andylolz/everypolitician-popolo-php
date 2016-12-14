@@ -56,57 +56,57 @@ class Person extends PopoloObject
 
     protected function getId()
     {
-         return $this->arrGet($this->data, 'id');
+        return $this->arrGet($this->data, 'id');
     }
 
     protected function getEmail()
     {
-         return $this->arrGet($this->data, 'email');
+        return $this->arrGet($this->data, 'email');
     }
 
     protected function getGender()
     {
-         return $this->arrGet($this->data, 'gender');
+        return $this->arrGet($this->data, 'gender');
     }
 
     protected function getHonorificPrefix()
     {
-         return $this->arrGet($this->data, 'honorific_prefix');
+        return $this->arrGet($this->data, 'honorific_prefix');
     }
 
     protected function getHonorificSuffix()
     {
-         return $this->arrGet($this->data, 'honorific_suffix');
+        return $this->arrGet($this->data, 'honorific_suffix');
     }
 
     protected function getImage()
     {
-         return $this->arrGet($this->data, 'image');
+        return $this->arrGet($this->data, 'image');
     }
 
     protected function getName()
     {
-         return $this->arrGet($this->data, 'name');
+        return $this->arrGet($this->data, 'name');
     }
 
     protected function getSortName()
     {
-         return $this->arrGet($this->data, 'sort_name');
+        return $this->arrGet($this->data, 'sort_name');
     }
 
     protected function getNationalIdentity()
     {
-         return $this->arrGet($this->data, 'national_identity');
+        return $this->arrGet($this->data, 'national_identity');
     }
 
     protected function getSummary()
     {
-         return $this->arrGet($this->data, 'summary');
+        return $this->arrGet($this->data, 'summary');
     }
 
     protected function getBiography()
     {
-         return $this->arrGet($this->data, 'biography');
+        return $this->arrGet($this->data, 'biography');
     }
 
     protected function getBirthDate()
@@ -121,12 +121,12 @@ class Person extends PopoloObject
 
     protected function getFamilyName()
     {
-         return $this->arrGet($this->data, 'family_name');
+        return $this->arrGet($this->data, 'family_name');
     }
 
     protected function getGivenName()
     {
-         return $this->arrGet($this->data, 'given_name');
+        return $this->arrGet($this->data, 'given_name');
     }
 
     protected function getWikidata()
@@ -190,32 +190,32 @@ class Person extends PopoloObject
 
     protected function getLinks()
     {
-         return $this->getRelatedObjectArr('links');
+        return $this->getRelatedObjectArr('links');
     }
 
     protected function getContactDetails()
     {
-         return $this->getRelatedObjectArr('contact_details');
+        return $this->getRelatedObjectArr('contact_details');
     }
 
     protected function getIdentifiers()
     {
-         return $this->getRelatedObjectArr('identifiers');
+        return $this->getRelatedObjectArr('identifiers');
     }
 
     protected function getImages()
     {
-         return $this->getRelatedObjectArr('images');
+        return $this->getRelatedObjectArr('images');
     }
 
     protected function getOtherNames()
     {
-         return $this->getRelatedObjectArr('other_names');
+        return $this->getRelatedObjectArr('other_names');
     }
 
     protected function getSources()
     {
-         return $this->getRelatedObjectArr('sources');
+        return $this->getRelatedObjectArr('sources');
     }
 
     protected function getMemberships()
@@ -257,8 +257,8 @@ class Person extends PopoloObject
             return $this->name;
         }
         if (count($namesAtDate) > 1) {
-            $msg = 'Multiple names for ' . (string) $this;
-            $msg .= ' found at date ' . $particularDate->format('Y-m-d');
+            $msg = 'Multiple names for '.(string) $this;
+            $msg .= ' found at date '.$particularDate->format('Y-m-d');
             throw new Exception($msg);
         }
         return $namesAtDate[0]['name'];

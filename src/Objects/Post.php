@@ -23,12 +23,12 @@ class Post extends PopoloObject
 
     protected function getId()
     {
-         return $this->arrGet($this->data, 'id');
+        return $this->arrGet($this->data, 'id');
     }
 
     protected function getLabel()
     {
-         return $this->arrGet($this->data, 'label');
+        return $this->arrGet($this->data, 'label');
     }
 
     protected function getOrganizationId()

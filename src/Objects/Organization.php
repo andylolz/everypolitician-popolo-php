@@ -30,12 +30,12 @@ class Organization extends PopoloObject
 
     protected function getId()
     {
-         return $this->arrGet($this->data, 'id');
+        return $this->arrGet($this->data, 'id');
     }
 
     protected function getName()
     {
-         return $this->arrGet($this->data, 'name');
+        return $this->arrGet($this->data, 'name');
     }
 
     protected function getWikidata()
@@ -72,7 +72,7 @@ class Organization extends PopoloObject
 
     protected function getIdentifiers()
     {
-         return $this->getRelatedObjectArr('identifiers');
+        return $this->getRelatedObjectArr('identifiers');
     }
 
     protected function getLinks()

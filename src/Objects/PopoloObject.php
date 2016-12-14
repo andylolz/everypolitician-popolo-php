@@ -36,7 +36,7 @@ class PopoloObject
     {
         $properties = array_merge($this->baseProperties, $this->properties);
         if (in_array($prop, $properties)) {
-            $getter = 'get' . ucfirst($prop);
+            $getter = 'get'.ucfirst($prop);
             return $this->$getter();
         }
         trigger_error('Undefined property: '.__CLASS__.'::$'.$prop, E_USER_ERROR);
